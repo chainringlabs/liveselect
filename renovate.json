@@ -1,43 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":timezone(America/New_York)"
+    "github>tgrecojr/renovate-config"
   ],
-  "labels": ["dependencies"],
-  "schedule": ["before 6am on monday"],
-  "prHourlyLimit": 4,
-  "prConcurrentLimit": 10,
-  "rebaseWhen": "behind-base-branch",
-  "swift": {
-    "enabled": true
-  },
-  "github-actions": {
-    "enabled": true
-  },
-  "packageRules": [
-    {
-      "description": "Group all non-major SPM updates into a single PR",
-      "matchManagers": ["swift"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "swift-packages (non-major)"
-    },
-    {
-      "description": "Group all GitHub Actions updates",
-      "matchManagers": ["github-actions"],
-      "groupName": "github-actions",
-      "pinDigests": true
-    },
-    {
-      "description": "Wait a few days before opening a PR so broken releases get yanked",
-      "matchUpdateTypes": ["patch", "minor", "major"],
-      "minimumReleaseAge": "3 days"
-    }
-  ],
+  "description": "No CI and no required checks in this repo, so nothing is automerged.",
+  "automerge": false,
   "vulnerabilityAlerts": {
-    "enabled": true,
-    "labels": ["security"]
+    "automerge": false
   }
 }
