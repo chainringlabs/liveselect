@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>tgrecojr/renovate-config"
+    "github>chainringlabs/renovate-config"
   ],
   "description": "No CI and no required checks in this repo, so nothing is automerged.",
   "automerge": false,
